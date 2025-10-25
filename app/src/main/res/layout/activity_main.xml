@@ -105,7 +105,7 @@
                         android:textColor="#000000"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
+            
             <Button
                 android:id="@+id/btnCbTemizle"
                 android:layout_width="match_parent"
@@ -123,160 +123,187 @@
         android:layout_height="match_parent"
         android:background="@android:color/darker_gray" />
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:padding="16dp"
+        android:orientation="horizontal"
         android:background="#000000">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="16dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ESPÈCES (NAKİT) KONTROLÜ"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp"
-                android:textColor="#FFFFFF"/>
-            
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Kasa Fişi Nakit Toplamı"
-                android:textColor="#CCCCCC"/>
-            <EditText
-                android:id="@+id/etKasaNakitToplam"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:hint="0.00"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#888888"/>
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Fond Caisse (Sabah)"
-                android:textColor="#CCCCCC"/>
-            <EditText
-                android:id="@+id/etFondCaisse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:hint="0.00"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#888888"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Para Sayacı (Adet)"
-                android:layout_marginTop="24dp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"/>
-
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="500 € x" android:textColor="#CCCCCC"/>
-                <EditText android:id="@+id/et500" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="200 € x" android:textColor="#CCCCCC"/>
-                <EditText android:id="@+id/et200" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="100 € x" android:textColor="#CCCCCC"/>
-                <EditText android:id="@+id/et100" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="50 € x" android:textColor="#CCCCCC"/>
-                <EditText android:id="@+id/et50" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="20 € x" android:textColor="#CCCCCC"/>
-                <EditText android:id="@+id/et20" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="10 € x" android:textColor="#CCCCCC"/>
-                <EditText android:id="@+id/et10" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="5 € x" android:textColor="#CCCCCC"/>
-                <EditText android:id="@+id/et5" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="1 € x" android:textColor="#CCCCCC"/>
-                <EditText android:id="@+id/et1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="0.01 € x" android:textColor="#CCCCCC"/>
-                <EditText android:id="@+id/etCent" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
-            </LinearLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Sayılan Toplam"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"/>
-            <TextView
-                android:id="@+id/tvSayilanToplam"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="0.00"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:gravity="end"
-                android:textColor="#FFFFFF"/>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardNakitFark"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                app:cardElevation="4dp"
-                app:contentPadding="16dp">
-                <LinearLayout
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ESPÈCES (NAKİT) KONTROLÜ"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="#FFFFFF"/>
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Kasa Fişi Nakit Toplamı"
+                    android:textColor="#CCCCCC"/>
+                <EditText
+                    android:id="@+id/etKasaNakitToplam"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:hint="0.00"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#888888"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Fond Caisse (Sabah)"
+                    android:textColor="#CCCCCC"/>
+                <EditText
+                    android:id="@+id/etFondCaisse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:hint="0.00"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#888888"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Sayılan Toplam"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"/>
+                <TextView
+                    android:id="@+id/tvSayilanToplam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0.00"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="end"
+                    android:textColor="#FFFFFF"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardNakitFark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    app:cardElevation="4dp"
+                    app:contentPadding="16dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="NAKİT FARKI"
-                        android:textStyle="bold"
-                        android:textAllCaps="true"
-                        android:textColor="#000000"/>
-                    <TextView
-                        android:id="@+id/tvNakitFark"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        tools:text="-5.00"
-                        android:text="0.00"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        android:textColor="#000000"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="NAKİT FARKI"
+                            android:textStyle="bold"
+                            android:textAllCaps="true"
+                            android:textColor="#000000"/>
+                        <TextView
+                            android:id="@+id/tvNakitFark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            tools:text="-5.00"
+                            android:text="0.00"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                
+                <Button
+                    android:id="@+id/btnNakitTemizle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="NAKİT TEMİZLE"
+                    app:backgroundTint="#333333"
+                    android:textColor="#FFFFFF"/>
+            </LinearLayout>
+        </ScrollView>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="16dp">
             
-            <Button
-                android:id="@+id/btnNakitTemizle"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="NAKİT TEMİZLE"
-                app:backgroundTint="#333333"
-                android:textColor="#FFFFFF"/>
+                android:orientation="vertical">
 
-        </LinearLayout>
-    </ScrollView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Para Sayacı (Adet)"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"/>
 
-</LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="500 € x" android:textColor="#CCCCCC"/>
+                    <EditText android:id="@+id/et500" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="200 € x" android:textColor="#CCCCCC"/>
+                    <EditText android:id="@+id/et200" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="100 € x" android:textColor="#CCCCCC"/>
+                    <EditText android:id="@+id/et100" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="50 € x" android:textColor="#CCCCCC"/>
+                    <EditText android:id="@+id/et50" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="20 € x" android:textColor="#CCCCCC"/>
+                    <EditText android:id="@+id/et20" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="10 € x" android:textColor="#CCCCCC"/>
+                    <EditText android:id="@+id/et10" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="5 € x" android:textColor="#CCCCCC"/>
+                    <EditText android:id="@+id/et5" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="1 € x" android:textColor="#CCCCCC"/>
+                    <EditText android:id="@+id/et1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="0.01 € x" android:textColor="#CCCCCC"/>
+                    <EditText android:id="@+id/etCent" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:inputType="number" android:hint="Adet" android:textColor="#FFFFFF" android:textColorHint="#888888"/>
+                </LinearLayout>
+                
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout> </LinearLayout>
