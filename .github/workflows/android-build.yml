@@ -1,0 +1,50 @@
+# BU, GITHUB ACTIONS "BUILD" DOSYASIDIR
+# Adı "Android Build" olacak
+name: Android Build
+
+# Bu "build" işleminin ne zaman tetikleneceğini söyler
+on:
+  # "main" branch'ine her kod yüklediğinde (push)
+  push:
+    branches: [ "main" ]
+  # Veya manuel olarak "Run workflow" butonuna bastığında
+  workflow_dispatch:
+
+# "Build" işleminin adımları
+jobs:
+  build:
+    # Bu işlemin bir Linux sunucusunda çalışacağını söyler
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Adım: Proje kodlarını (tüm dosyalarımızı) sunucuya indirir
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # 2. Adım: Android "build" işlemi için gerekli olan Java (JDK 17) sürümünü kurar
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    # 3. Adım: Gradle'ı (inşa sistemini) kurar ve hızlandırmak için önbelleğe alır
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v3
+
+    # 4. Adım (ÖNEMLİ): Adım 9'da eklediğimiz 'gradlew' dosyasını çalıştırılabilir hale getirir
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
+
+    # 5. Adım (ASIL BUILD): 'gradlew' kullanarak uygulamayı "Debug" modunda build eder
+    # Bu, 'app/build/outputs/apk/debug/' klasöründe 'app-debug.apk' dosyasını oluşturur
+    - name: Build with Gradle
+      run: ./gradlew assembleDebug
+
+    # 6. Adım (SONUÇ): Oluşturulan 'app-debug.apk' dosyasını bulur
+    # ve "Build Artifact" (Build Ürünü) olarak kaydeder
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-debug-apk
+        path: app/build/outputs/apk/debug/app-debug.apk
