@@ -1,0 +1,31 @@
+# BU DOSYA, build.gradle.kts DOSYALARINDA KULLANDIĞIMIZ 
+# "libs.plugins..." veya "libs.androidx..." GİBİ KISALTMALARIN
+# GERÇEK KARŞILIKLARINI VE VERSİYONLARINI TANIMLAYAN SÖZLÜKTÜR.
+
+[versions]
+# Projeyi inşa etmek için kullanılacak Android aracının (plugin) versiyonu
+androidGradlePlugin = "8.4.1" 
+# Kotlin dilinin versiyonu
+kotlin = "1.9.23"
+# Kullandığımız kütüphanelerin versiyonları
+coreKtx = "1.13.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+cardview = "1.0.0"
+
+
+[libraries]
+# MainActivity.kt'nin çalışması için gereken temel kütüphaneler
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+google-android-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+# O renkli sonuç kutuları (CardView) için gereken kütüphane
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
+
+
+[plugins]
+# Adım 5 ve Adım 4'te kullandığımız "alias(libs.plugins.android.application)" kısaltmasının tanımı
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+# "alias(libs.plugins.jetbrains.kotlin.android)" kısaltmasının tanımı
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
