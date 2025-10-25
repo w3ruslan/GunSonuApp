@@ -22,26 +22,23 @@ jobs:
       uses: actions/checkout@v4
 
     # 2. Adım: Android "build" işlemi için gerekli olan Java (JDK 17) sürümünü kurar
+    # Bizim 'gradlew' dosyamızın çalışması için bu Java'ya ihtiyacı var
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
 
-    # 3. Adım: Gradle'ı (inşa sistemini) kurar ve hızlandırmak için önbelleğe alır
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@v3
-
-    # 4. Adım (ÖNEMLİ): Adım 9'da eklediğimiz 'gradlew' dosyasını çalıştırılabilir hale getirir
+    # 3. Adım (ÖNEMLİ): Adım 9'da eklediğimiz 'gradlew' dosyasını çalıştırılabilir hale getirir
     - name: Make gradlew executable
       run: chmod +x ./gradlew
 
-    # 5. Adım (ASIL BUILD): 'gradlew' kullanarak uygulamayı "Debug" modunda build eder
+    # 4. Adım (ASIL BUILD): 'gradlew' kullanarak uygulamayı "Debug" modunda build eder
     # Bu, 'app/build/outputs/apk/debug/' klasöründe 'app-debug.apk' dosyasını oluşturur
     - name: Build with Gradle
       run: ./gradlew assembleDebug
 
-    # 6. Adım (SONUÇ): Oluşturulan 'app-debug.apk' dosyasını bulur
+    # 5. Adım (SONUÇ): Oluşturulan 'app-debug.apk' dosyasını bulur
     # ve "Build Artifact" (Build Ürünü) olarak kaydeder
     - name: Upload APK
       uses: actions/upload-artifact@v4
